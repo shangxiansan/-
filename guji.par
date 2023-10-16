@@ -1,0 +1,44 @@
+#遗传参数估计
+DATAFILE
+ data #个体号 表型 性别 测定场年月 品系 窝号
+TRAITS
+ 2
+FIELDS_PASSED TO OUTPUT
+ 1
+WEIGHT(S)
+
+RESIDUAL_VARIANCE ###残差
+ 66.008 
+EFFECT      ####加性    
+ 1 cross alpha
+RANDOM
+ animal     
+FILE
+ ped
+FILE_POS
+ 1 2 3 0 4
+PED_DEPTH
+ 0
+(CO)VARIANCES
+ 25.033
+EFFECT      ####固定效应性别 场年 品系
+ 3 cross alpha
+EFFECT
+ 4 cross alpha 
+EFFECT
+ 5 cross alpha 
+EFFECT      ####窝效应
+ 6 cross alpha
+RANDOM
+ diagonal
+(CO)VARIANCES
+ 19.31 
+OPTION conv_crit 1d-8
+OPTION solv_method FSPAK
+OPTION use_yams
+OPTION fact_once memory
+OPTION missing -999
+OPTION alpha_size 40
+OPTION samples_se_covar_function 50000
+OPTION se_covar_function Vp G_1_1_1_1+G_5_5_1_1+R_1_1
+OPTION se_covar_function H2a G_1_1_1_1/(G_1_1_1_1+G_5_5_1_1+R_1_1)

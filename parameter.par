@@ -1,0 +1,43 @@
+DATAFILE
+data
+TRAITS
+2
+FIELDS_PASSED TO OUTPUT
+1
+WEIGHT(S)
+ 
+RESIDUAL_VARIANCE
+50.0
+EFFECT
+1 cross alpha
+RANDOM
+animal
+FILE
+ped
+FILE_POS
+1 2 3 0 4
+PED_DEPTH
+0
+(CO)VARIANCES
+25.0
+EFFECT
+3 cross alpha
+EFFECT
+4 cross alpha
+EFFECT
+5 cross alpha
+EFFECT
+6 cross alpha
+RANDOM
+diagonal
+(CO)VARIANCES
+15.0
+OPTION conv_crit 1d-8
+OPTION solv_method FSPAK
+OPTION use_yams
+OPTION fact_once memory
+OPTION missing -999
+OPTION alpha_size 40
+OPTION samples_se_covar_function 50000
+OPTION se_covar_function Vp G_1_1_1_1+G_5_5_1_1+R_1_1
+OPTION se_covar_function H2a G_1_1_1_1/(G_1_1_1_1+G_5_5_1_1+R_1_1)
